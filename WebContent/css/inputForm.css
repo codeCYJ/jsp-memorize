@@ -1,0 +1,106 @@
+@charset "utf-8";
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Playfair Display', serif;
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	background: radial-gradient(#485563, #29323c);
+	margin: 0 auto;
+}
+
+.topiddiv {
+	margin: 20px 30px;
+}
+
+.topiddiv .topid {
+	color: #eee;
+	font-size: 14px;
+	font-weight: 200px;
+}
+
+.topiddiv .logoutBtn {
+	background-color: rgba(0, 0, 0, 0.5);
+	color: #eee;
+	border: 1px solid #eee;
+	padding: 5px 10px;
+}
+
+.topiddiv .logoutBtn:hover {
+	background: rgba(255, 255, 255, 0.1);
+}
+
+#wrap .title {
+	color: white;
+	text-align: center;
+	font-size: 50px;
+	text-shadow: 2px 2px black;
+	margin: 110px auto 10px auto;
+	font-weight: 500;
+}
+
+#wrap .subtitle {
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+	padding-bottom: 50px;
+	color: white;
+	font-variant: small-caps;
+}
+
+#wrap .contentDiv {
+	max-width: 400px;
+	padding: 30px;
+	border-radius: 10px;
+	background: rgba(0, 0, 0, 0.1);
+	backdrop-filter: saturate(100%) blur(15px);
+}
+
+#wrap .contentDiv .tdTxt-id,
+#wrap .contentDiv .tdTxt {
+	color: white;
+	font-size: 16px;
+	margin-right: 30px;
+}
+
+#wrap .contentDiv .tdInput,
+#wrap .contentDiv .tdTxtarea{
+	height: 18px;
+	margin: 10px 30px;
+	width: 250px;
+	background: rgba(0, 0, 0, 0.1);
+	outline: none;
+	border: none;
+	float: left;
+	padding-left: 10px;
+	color: white;
+	border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+#wrap .contentDiv .tdTxtarea{
+	margin-top: 5px;
+	height: 40px;
+}
+
+#wrap .contentDiv .inputSub, #wrap .contentDiv .inputRes, #wrap .contentDiv .testBtn {
+	margin: 40px 5px 10px 5px;
+	background-color: rgba(0,0,0,0.5);
+	color: white;
+	padding: 5px 0;
+	font-size: 14px;
+	display: inline;
+	border-radius: 5px;
+	width: 80px;
+	cursor: pointer;
+} 
+
+
+#wrap .contentDiv .inputSub:hover, #wrap .contentDiv .inputRes:hover, #wrap .contentDiv .testBtn:hover {
+	background: rgba(255,255,255,0.1);
+}
+

@@ -1,0 +1,53 @@
+-----------
+--memorize
+-----------
+
+drop sequence memorize_seq;
+create sequence memorize_seq
+    start with 1
+    increment by 1
+    maxvalue 10000
+    minvalue 1;
+    
+drop table memorize purge;
+create table memorize (
+    no          number(5) primary key,
+    content     varchar2(500),
+    repeat      number(2),
+    id          varchar2(20),
+    completed   number(1),
+    CONSTRAINT FK_ID FOREIGN KEY(id)
+    REFERENCES mb(id)
+);
+
+drop table mb purge;
+create table mb (
+    id      varchar2(20) primary key,
+    pw      varchar2(20)
+);
+
+insert into mb values('song', '1111');
+insert into mb values('jung', '1111');
+insert into mb values('jeon', '1111');
+insert into mb values('choi', '1111');
+
+insert into memorize values( memorize_seq.nextval, 'content', 3, 'jeon', 0);
+
+insert into memorize values( memorize_seq.nextval, 'animation-name', 3, 'song', 0);
+insert into memorize values( memorize_seq.nextval, 'animation-duration', 4, 'song', 0);
+insert into memorize values( memorize_seq.nextval, 'animation-delay', 5, 'song', 0);
+
+insert into memorize values( memorize_seq.nextval, 'visibility: visible', 3, 'choi', 0);
+insert into memorize values( memorize_seq.nextval, 'visibility: hidden', 3, 'choi', 0);
+insert into memorize values( memorize_seq.nextval, 'display:none', 3, 'choi', 0);
+
+insert into memorize values( memorize_seq.nextval, 'display: inline-block', 3, 'jung', 0);
+insert into memorize values( memorize_seq.nextval, 'justify-content: space-around', 3, 'jung', 0);
+insert into memorize values( memorize_seq.nextval, 'display: flex', 3, 'jung', 0);
+
+insert into memorize values( memorize_seq.nextval, 'session.setAttribute()', 3, 'jeon', 0);
+insert into memorize values( memorize_seq.nextval, 'session.getAttribute()', 4, 'jeon', 0);
+insert into memorize values( memorize_seq.nextval, 'request.getParameter()', 5, 'jeon', 0);
+
+commit;
+

@@ -1,0 +1,59 @@
+------------
+-- memorize
+------------
+
+drop sequence memorize_seq;
+create sequence memorize_seq
+    start with 1
+    increment by 1
+    maxvalue 10000
+    minvalue 1;
+    
+drop table memorize;
+create table memorize (
+    no          number(5) primary key,
+    content     varchar2(500),
+    repeat      number(2),
+    name        varchar2(20),
+    completed   number(1)
+);
+
+insert into memorize values( memorize_seq.nextval, 'hello world', 3, 'thezone', 0);
+
+insert into memorize values( memorize_seq.nextval, 'hello', 3, 'thezone', 0);
+
+insert into memorize values( memorize_seq.nextval, ?, ?, ?, 0);
+
+select * from memorize;
+
+delete from memorize; 
+
+commit;
+
+select * from memorize where rownum = 1 and completed = 0 order by no asc;
+
+update memorize set completed = 1 where no = 3;
+
+rollback;
+
+select * from memorize where no = 1;
+
+update memorize set content = 'test' where no = 1;
+
+select * from memorize;
+
+delete from memorize where no = 21;
+
+
+select count(*) from memorize;
+
+select * from 
+(select A.*, rownum as rnum from  
+(select * from memorize) A)  
+where rnum >= 5 and rnum <= 10;
+
+select * from memorize order by no asc;
+
+select A.* from  
+(select * from memorize where completed = 0 order by no asc) A
+where rownum = 1;

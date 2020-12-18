@@ -1,0 +1,166 @@
+
+@keyframes blink {
+from { opacity :0;}
+to {opacity: 1;}
+}
+
+@charset "utf-8";
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Playfair Display', serif;
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	background: radial-gradient(#485563, #29323c);
+	margin: 0 auto;
+}
+
+.topiddiv {
+	margin: 20px 30px;
+}
+
+.topiddiv .topid {
+	color: #eee;
+	font-size: 14px;
+	font-weight: 200px;
+}
+
+.topiddiv .logoutBtn {
+	background-color: rgba(0, 0, 0, 0.5);
+	color: #eee;
+	border: 1px solid #eee;
+	padding: 5px 10px;
+}
+
+.topiddiv .logoutBtn:hover {
+	background: rgba(255, 255, 255, 0.1);
+}
+
+.title {
+	color: white;
+	text-align: center;
+	font-size: 50px;
+	text-shadow: 2px 2px black;
+	margin: 110px auto 10px auto;
+	font-weight: 500;
+}
+
+.subtitle {
+	font-size: 18px;
+	text-align: center;
+	padding-bottom: 50px;
+	color: white;
+}
+
+.boxDiv {
+	max-width: 400px;
+	padding: 30px;
+	border-radius: 10px;
+	background: rgba(0, 0, 0, 0.1);
+	backdrop-filter: saturate(100%) blur(15px);
+}
+
+.boxDiv .sentenceNoTr .sentenceNo {
+	padding: 10px;
+	color: white;
+	text-align: center;
+	font-size: 20px;
+}
+
+.boxDiv .content {
+	border: 1px solid rgba(0,0,0,0.5);
+	color: white;
+	text-align: center;
+	height: 48px;
+	font-size: 40px;
+	width: 400px;
+	margin-top: 10px;
+}
+
+.boxDiv .testInp {
+	margin-top: 30px;
+	height: 48px;
+	font-size: 15px;
+	color: white;
+	width: 400px;
+	text-align: center;
+	background-color: rgba(0,0,0,0.5);
+	border: none;
+}
+
+.boxDiv .subBtn, .boxDiv .listBtn, .boxDiv .nextBtn {
+	display: inline;
+}
+
+.boxDiv .subBtn .subInp, .boxDiv .listBtn .listInp, .boxDiv .nextBtn .nextInp {
+	background-color: rgba(0,0,0,0.5);
+	color: white;
+	padding: 5px 10px;
+	font-size: 14px;
+	display: inline;
+	border-radius: 5px;
+	width: 80px;
+	cursor: pointer;
+	margin: 10px;
+}
+
+.boxDiv .subBtn .subInp:hover, .boxDiv .listBtn .listInp:hover, .boxDiv .nextBtn .nextInp:hover {
+	background: rgba(255,255,255,0.1);
+}
+
+.result {
+	color: white;
+	text-align: center;
+	padding: 5px;
+}
+
+#timerBg {
+	background-color: rgba(0,0,0,0.5);
+	border: none;
+	width: 70px;
+	height: 70px;
+	margin-top: 40px;
+	position: absolute;
+	border-radius: 100%;
+	text-align: center;
+	line-height: 75px;
+	margin-left: 40px;
+	color: white;
+	font-size: 25px;
+	font-family: 'Josefin Sans', D2Coding;
+}
+.Arrow {
+	opacity: 0;
+}
+#timeoutBg {
+	background-image: url("../img/arrow.png");
+	background-repeat: no-repeat;
+	background-size: 80px;
+	width: 100px;
+	height: 100px;
+	margin-top: 130px;
+	position: absolute;
+	text-align: center;
+	line-height: 50px;
+	margin-left: 15px;
+	animation: move 1s infinite;
+}
+
+.timeout {
+	opacity: 1;
+}
+
+.timeout2 {
+	opacity: 0;
+}
+
+@keyframes move { 
+0% {}
+50%{transform:translate(5px,-5px);}
+100%{transform: translate(0,0);}
+}

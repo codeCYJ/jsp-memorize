@@ -1,0 +1,52 @@
+-----------
+--memorize
+-----------
+
+drop sequence memorize_seq;
+create sequence memorize_seq
+    start with 1
+    increment by 1
+    maxvalue 10000
+    minvalue 1;
+    
+drop table memorize purge;
+create table memorize (
+    no          number(5) primary key,
+    content     varchar2(500),
+    repeat      number(2),
+    id          varchar2(20),
+    completed   number(1),
+    CONSTRAINT FK_ID FOREIGN KEY(id)
+    REFERENCES mb(id)
+);
+
+drop table mb purge;
+create table mb (
+    id      varchar2(20) primary key,
+    pw      varchar2(20)
+);
+
+insert into mb values('thezone', '1111');
+
+insert into mb values('song', '1111');
+
+insert into mb values('송송', '1111');
+
+commit;
+
+insert into memorize values(1, 'content', 3, 'thezone', 1);
+
+select * from mb where id = 'thezone';
+
+select pw from mb where id = 'thezone';
+
+select A.* from  
+(select * from memorize where completed = 0 order by no asc) A
+where rownum = 1;
+
+select * from memorize;
+
+select * from
+(select A.*, rownum as rnum from
+(select * from memorize where id = 'song' order by no asc) A)
+where rnum >= 1 and rnum <= 10;
